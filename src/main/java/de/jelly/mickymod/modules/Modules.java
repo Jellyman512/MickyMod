@@ -11,9 +11,9 @@ public class Modules {
     }
 
     public static Module addModule(Module module) {
-        return instances.put(module.getId(), module);
+        return modules.put(module.getId(), module);
     }
 
-    
+
 
 }
