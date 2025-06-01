@@ -1,6 +1,6 @@
 package de.jelly.mickymod.mixin;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import de.jelly.mickymod.MickyMod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -38,7 +38,7 @@ public class InGameHudMixin {
         float scaleMain = 2.0f;
         matrices.scale(scaleMain, scaleMain, 1.0f);
 
-        Text alphaText = Text.literal("Micky Mod").formatted(Formatting.BOLD);
+        Text alphaText = Text.literal(MickyMod.MOD_DISPLAYNAME).formatted(Formatting.BOLD);
         int mainX = (int)(x / scaleMain);
         int mainY = (int)(y / scaleMain);
 

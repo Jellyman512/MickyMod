@@ -1,15 +1,24 @@
 package de.jelly.mickymod;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import de.jelly.mickymod.Toggler.CapeToggler;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.command.CommandSource;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.mojang.datafixers.DSL.string;
 
 public class MickyMod implements ModInitializer {
 	public static MinecraftClient MC;
 
 	public static final String MOD_ID = "micky-mod";
+	public static final String MOD_DISPLAYNAME = "Micky Mod";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -23,6 +32,76 @@ public class MickyMod implements ModInitializer {
 		// Proceed with mild caution.
 		MC = MinecraftClient.getInstance();
 
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-default")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleDefaultCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-RainerStinkler")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleRainerStinklerCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-Special-Notch")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleNotchCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-AxoBucket")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleAxoBucketCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-Fox")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleFoxCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
 
 		LOGGER.info("Micky Mod Loaded Good Skibidi Ohio Downtown Gigachad Skibidi Rizzler");
 	}

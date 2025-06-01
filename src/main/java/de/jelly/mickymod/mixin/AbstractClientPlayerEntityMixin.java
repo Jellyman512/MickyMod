@@ -1,6 +1,7 @@
 package de.jelly.mickymod.mixin;
 
 import de.jelly.mickymod.MickyMod;
+import de.jelly.mickymod.Toggler.CapeToggler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.PlayerListEntry;
@@ -30,7 +31,7 @@ public abstract class AbstractClientPlayerEntityMixin {
                 MinecraftClient.getInstance().getSession().getUuidOrNull()
         )) {
             SkinTextures original = cir.getReturnValue();
-            Identifier capeIdentifier = Identifier.of(MickyMod.MOD_ID, "cape/defaultcape.png");
+            Identifier capeIdentifier = Identifier.of(MickyMod.MOD_ID, "cape/" + CapeToggler.capevar + ".png");
 
             SkinTextures modified = new SkinTextures(
                     original.texture(),
