@@ -1,12 +1,14 @@
 package de.jelly.mickymod;
 
-import de.jelly.mickymod.modules.TestModule;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MickyMod implements ModInitializer {
+	public static MinecraftClient MC;
+
 	public static final String MOD_ID = "micky-mod";
 
 	// This logger is used to write text to the console and the log file.
@@ -19,8 +21,8 @@ public class MickyMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		MC = MinecraftClient.getInstance();
 
-		TestModule testModule = new TestModule();
 
 		LOGGER.info("Micky Mod Loaded Good Skibidi Ohio Downtown Gigachad Skibidi Rizzler");
 	}

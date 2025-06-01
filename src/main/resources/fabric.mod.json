@@ -3,9 +3,10 @@
 	"id": "micky-mod",
 	"version": "${version}",
 	"name": "Micky Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Micky Mod is a mod that is for cosmetics and Helpfull Stuff",
 	"authors": [
-		"Me!"
+		"Jellyman",
+		"LeyCM"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
