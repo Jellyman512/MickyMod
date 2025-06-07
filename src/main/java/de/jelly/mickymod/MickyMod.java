@@ -102,6 +102,104 @@ public class MickyMod implements ModInitializer {
 							})
 			);
 		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-minecon-2013")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleMinecon13();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-minecon-2015")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleMinecon15();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-minecon-migrator")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleMineconMigrator();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-EnderDragon")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleEnderDragon();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-duck")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleDuckCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-glass")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleGlasCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
+		ClientCommandRegistrationCallback.EVENT.register((commandDispatcher, commandRegistryAccess) -> {
+
+			// Hier wird das Kommando mit FabricClientCommandSource registriert
+			commandDispatcher.register(
+					LiteralArgumentBuilder.<FabricClientCommandSource>literal("cape-chicken")
+							.executes(context -> {
+								// Deine Logik für das Toggeln des Capes
+								CapeToggler.toggleChickenCape();
+
+								// Erfolgreiche Ausführung des Kommandos
+								return 1;
+							})
+			);
+		});
 
 		LOGGER.info("Micky Mod Loaded Good Skibidi Ohio Downtown Gigachad Skibidi Rizzler");
 	}
